@@ -59,7 +59,7 @@ const ContactPage = () => {
         </div>
         <div className="flex flex-col gap-6">
           <div className="">
-            You can send me an email, but why not call? People don&apost call
+            You can send me an email, but why not call? People don&#39;t call
             anymore... Call me!
           </div>
           <form  className="flex flex-col gap-8">
