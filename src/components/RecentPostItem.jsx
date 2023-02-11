@@ -9,7 +9,7 @@ const RecentPostItem = ({ postData }) => {
       <div className="flex flex-col w-auto h-1/2 gap-3 p-4">
         <div>
           <div className="text-[#005929] uppercase font-medium tracking-[0.003em] px-2 py-1 inline-block bg-[#E8FFEE] text-[12px]">
-            {postData.category.categoryName}
+            <Link href={'/category/'+ postData.category.categoryName}>{postData.category.categoryName}</Link>
           </div>
         </div>
         <div className="text-3xl"><Link href={'/posts/' + postData.slug}>{postData.title}</Link></div>
