@@ -13,6 +13,7 @@
     "@graphcms/rich-text-react-renderer": "^0.6.1",
     "@heroicons/react": "^2.0.14",
     "@next/font": "13.1.6",
+    "@tailwindcss/typography": "^0.5.9",
     "eslint": "8.33.0",
     "eslint-config-next": "13.1.6",
     "graphql": "^16.6.0",
@@ -20,7 +21,9 @@
     "moment": "^2.29.4",
     "next": "13.1.6",
     "react": "18.2.0",
-    "react-dom": "18.2.0"
+    "react-dom": "18.2.0",
+    "react-loading-skeleton": "^3.1.1",
+    "swr": "^2.0.3"
   },
   "devDependencies": {
     "@tailwindcss/forms": "^0.5.3",

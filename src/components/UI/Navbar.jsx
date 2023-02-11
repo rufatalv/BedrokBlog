@@ -49,6 +49,9 @@ const Navbar = () => {
               <li>
                 <Link href="/contact">Contact</Link>
               </li>
+              <li>
+                <Link href="/search" className="py-1 px-6 bg-black text-white rounded-[6px]">Search</Link>
+              </li>
             </ul>
           </div>
         </div>

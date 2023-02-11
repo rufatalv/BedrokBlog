@@ -10,7 +10,7 @@ const PostItem = ({ data }) => {
         <div>
           <div className="text-[#005929] uppercase font-medium tracking-[0.003em] px-2 py-1 inline-block bg-[#E8FFEE] text-[12px]">
             <Link href={"/category/" + data.category.categoryName}>
-              {data.category.categoryName}
+              {data.category.categoryName || <Skeleton />}
             </Link>
           </div>
         </div>

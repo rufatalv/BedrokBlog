@@ -46,20 +46,30 @@ export async function getStaticPaths() {
   const { posts } = await getSluglist();
   return {
     paths: posts.map((post) => ({ params: { slug: post.slug } })),
-    fallback: 'blocking'
+    fallback: "blocking",
   };
 }
 const PostDetails = ({ post }) => {
   return (
-    <main className="container mt-20 font-display">
-      <h1 className="sm:text-5xl md:text-7xl text-[32px] mb-10 md:mb-12 leading-10 md:leading-[90px]">{post.title}</h1>
+    <div className="container px-5 lg:px-0 lg:mt-20 mt-[40px] font-display">
       <div>
-        <img
-          className="object-cover h-[auto] md:h-[450px] rounded-[5px] md:rounded-[20px] md:w-[1000px] w-[335px]"
-          src={post.coverPhoto.url}
-        />
+        <h1 className="sm:text-5xl md:text-7xl text-[32px] mb-10 md:mb-12 leading-10 md:leading-[90px]">
+          {post.title}
+        </h1>
+        <div className="overflow-hidden">
+          <Image
+            src={post.coverPhoto.url}
+            className="w-auto h-auto md:w-[800px] md:h-[400px] lg:w-[1000px] lg:h-[500px] rounded-[5px] md:rounded-my object-fill"
+            alt="ss"
+            width={1000}
+            height={500}
+          />
+        </div>
       </div>
-    </main>
+      <div className="prose mx-auto w-[700px]" dangerouslySetInnerHTML={{__html: post.content.html}}>
+          
+      </div>
+    </div>
   );
 };
 
