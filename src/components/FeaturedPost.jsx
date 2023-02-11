@@ -18,7 +18,7 @@ const FeaturedPost = ({ data }) => {
           <div className="flex flex-col h-fit">
             <div>
               <h4 className="text-[#005929] uppercase font-medium tracking-[0.003em] px-2 py-1 inline-block bg-[#E8FFEE] text-[12px]">
-                {category.categoryName}
+                <Link href={'/category/'+category.slug}>{category.categoryName}</Link>
               </h4>
             </div>
             <h1 className="text-[40px] mt-4 leading-[48px]"><Link href={`/posts/`+ slug}>{title}</Link></h1>

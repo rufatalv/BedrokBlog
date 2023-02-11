@@ -1,6 +1,11 @@
 import Button from "@/components/UI/Button";
-
+import { useRouter } from "next/router";
 export default function Custom404() {
+  const router= useRouter();
+
+  const clickHandler = () =>{
+    router.push('/')
+  }
   return (
     <div className="bg-black">
       <div className="container flex">

@@ -1,3 +1,4 @@
+import Link from "next/link";
 import React from "react";
 import RecentPostItem from "./RecentPostItem";
 
@@ -9,7 +10,7 @@ const RecentPosts = ({ data }) => {
           Recent Posts
         </div>
         <div className="text-lg font-medium mt-auto cursor-pointer">
-          See All
+          <Link href='/posts/all'>See All</Link>
         </div>
       </div>
       <div className="flex flex-col gap-6 lg:gap-0 md:flex-row flex-wrap justify-between">

@@ -17,6 +17,7 @@ export async function getStaticProps() {
   const recentPosts = (await getRecentPosts()) || [];
   return {
     props: { posts, recentPosts, featuredPost, recentPosts },
+    revalidate: 10,
   };
 }
 
