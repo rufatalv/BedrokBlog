@@ -46,7 +46,7 @@ export async function getStaticPaths() {
   const { posts } = await getSluglist();
   return {
     paths: posts.map((post) => ({ params: { slug: post.slug } })),
-    fallback: false,
+    fallback: 'blocking'
   };
 }
 const PostDetails = ({ post }) => {

@@ -37,7 +37,7 @@ const Subscribe = () => {
         <div>
           <form ref={form} className="w-full mt-4 flex">
             <input
-              type="text"
+              type="email"
               name="user_email"
               placeholder="Enter your email"
               className="placeholder:text-sm w-full text-gray-800 text-sm md:text-base placeholder:pl-4 rounded-[6px]"
