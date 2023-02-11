@@ -23,26 +23,25 @@ const Footer = () => {
           <div className="flex gap-4 flex-col">
             <h4 className="text-sm text-neutral-500">CATEGORIES</h4>
             <ul className="flex flex-col text-base gap-4">
-              <li>Entrepreneurship</li>
-              <li>Creator</li>
-              <li>Tech</li>
-              <li>All</li>
+              <li><Link href='/category/entrepreneurship'>Entrepreneurship</Link></li>
+              <li><Link href='/category/neutral'>Neutral</Link></li>
+              <li><Link href='/posts/all'>All</Link></li>
             </ul>
           </div>
           <div className="flex gap-4 flex-col">
             <h4 className="text-sm text-neutral-500">PAGES</h4>
             <ul className="flex flex-col text-base gap-4">
-              <li>Home</li>
-              <li>About</li>
-              <li>Subscribe</li>
+              <li><Link href='/'>Home</Link></li>
+              <li><Link href='/about'>About</Link></li>
+              <li><Link href='/about'>Subscribe</Link></li>
             </ul>
           </div>
           <div className="flex gap-4 flex-col">
             <h4 className="text-sm text-neutral-500">CONTACT</h4>
             <ul className="flex flex-col text-base gap-4">
-              <li>Twitter</li>
-              <li>LinkedIn</li>
-              <li>Email me</li>
+              <li><Link href='/'>Twitter</Link></li>
+              <li><Link href='/'>LinkedIn</Link></li>
+              <li><Link href='/contact'>Email me</Link></li>
             </ul>
           </div>
           <div>
