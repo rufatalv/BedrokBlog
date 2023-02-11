@@ -42,8 +42,9 @@ const CategoryPage = ({ posts }, category) => {
   console.log(category);
   return (
     <div className="px-5 lg:px-0 mt-24 md:container">
-      <h4 className="text-xl uppercase tracking-[0.15em] text-neutral-500">Category</h4>
-      <h1 className="text-7xl capitalize">{posts[0].category.categoryName}</h1>
+      <h4 className="text-xl uppercase tracking-[0.15em] text-neutral-500 mb-[13px] md:mb-[10px]">Category</h4>
+      <h1 className="text-3xl md:text-7xl capitalize mb-[13px] md:mb-[10px]">{posts[0].category.categoryName}</h1>
+      <p className="text-xl leading-7 mb-[53px] md:mb-[58px] text-neutral-400">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse varius enim in eros elementum tristique. Duis cursus, mi quis viverra ornare, eros dolor interdum.</p>
       <PostItems data={posts} />
     </div>
   );
