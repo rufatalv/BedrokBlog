@@ -49,11 +49,9 @@ const FeaturedPost = ({ data }) => {
             </h6>
           </div>
         </div>
-        <img
-          src={coverPhoto.url}
-          className="md:w-6/12 lg:w-8/12 lg:absolute lg:top-0 lg:right-0 lg:bottom-0"
-          alt=""
-        />
+        <div className="md:w-6/12 lg:w-8/12 flex lg:absolute lg:top-0 lg:right-0 lg:bottom-0">
+          <img src={coverPhoto.url} className=" object-fill w-full h-full" alt="" />
+        </div>
       </div>
     </div>
   );

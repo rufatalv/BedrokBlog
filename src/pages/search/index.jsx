@@ -63,6 +63,7 @@ const SearchPage = () => {
         />
       </form>
       {posts && <PostItems data={posts} />}
+      
     </div>
   );
 };

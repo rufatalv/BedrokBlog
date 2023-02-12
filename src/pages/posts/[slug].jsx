@@ -87,7 +87,7 @@ const PostDetails = ({ post }) => {
           <div>Posted {moment(post.publishedAt).format("L")}</div>
           <div>{post.minRead} min read</div>
         </div>
-        <div className="flex gap-2 mt-10 items-center text-neutral-500">
+        <div className="flex gap-2 mt-10 mb-4 items-center text-neutral-500">
           <div className="w-8 h-8 rounded-full overflow-hidden">
             <img src={post.author.avatar.url} className="object-fill" alt="" />
           </div>
