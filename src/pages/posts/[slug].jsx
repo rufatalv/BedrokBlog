@@ -1,8 +1,10 @@
 import React from "react";
+import moment from "moment";
 import { getSluglist, graphcms } from "lib/graphcms";
 import { gql } from "graphql-request";
 import Image from "next/image";
 import Head from "next/head";
+
 const QUERY = gql`
   query ($slug: String!) {
     post(where: { slug: $slug }) {
@@ -24,7 +26,15 @@ const QUERY = gql`
         catColorText
       }
       datePublished
+      publishedAt
       minRead
+      author {
+        id
+        name
+        avatar {
+          url
+        }
+      }
     }
   }
 `;
@@ -72,8 +82,21 @@ const PostDetails = ({ post }) => {
           />
         </div>
       </div>
-      <div className="prose mx-auto lg:w-[700px]" dangerouslySetInnerHTML={{__html: post.content.html}}>
-          
+      <div className="mx-auto mt-14 flex flex-col lg:w-[600px]">
+        <div className="flex justify-between text-neutral-500 border-b-[1px] border-t-[1px] border-neutral-700 py-[10px] text-base">
+          <div>Posted {moment(post.publishedAt).format("L")}</div>
+          <div>{post.minRead} min read</div>
+        </div>
+        <div className="flex gap-2 mt-10 items-center text-neutral-500">
+          <div className="w-8 h-8 rounded-full overflow-hidden">
+            <img src={post.author.avatar.url} className="object-fill" alt="" />
+          </div>
+          <h1>By {post.author.name}</h1>
+        </div>
+        <div
+          className="prose prose-blockquote:text-[32px] max-w-prose:w-full prose-h1:text-[40px] prose-h1:leading-10 prose-p:text-base prose-p:leading-6 prose-h1:font-normal prose-blockquote:italic prose-blockquote:font-display prose-blockquote:font-normal"
+          dangerouslySetInnerHTML={{ __html: post.content.html }}
+        ></div>
       </div>
     </div>
   );

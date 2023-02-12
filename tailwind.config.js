@@ -21,6 +21,13 @@ module.exports = {
       display: "var(--display-font)",
     },
     extend: {
+      typography: {
+        DEFAULT: {
+          css: {
+            maxWidth: 'full', // add required value here
+          }
+        }
+      },
       borderRadius: {
         my: "20px",
       },

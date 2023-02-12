@@ -57,10 +57,7 @@ const Navbar = () => {
         </div>
         <div>
           <ul
-            className={
-              !navToggle
-                ? "sm:hidden hidden flex-col md:hidden md:flex-row font-medium gap-5 text-xl"
-                : "flex sm:hidden mt-4 flex-col gap-2 font-normal uppercase tracking-wide text-xl"
+            className={!navToggle ? "hidden sm:hidden mt-4 flex-col gap-2 font-normal uppercase tracking-wide text-xl": "flex sm:hidden mt-4 flex-col gap-2 font-normal uppercase tracking-wide text-xl"
             }
           >
             <li>
