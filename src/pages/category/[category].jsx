@@ -40,8 +40,7 @@ export async function getStaticPaths() {
     fallback: false,
   };
 }
-const CategoryPage = ({ posts }, category) => {
-  console.log(category);
+const CategoryPage = ({ posts }) => {
   return (
     <div className="px-5 lg:px-0 mt-24 md:container">
       <Head>
