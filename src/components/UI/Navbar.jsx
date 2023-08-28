@@ -4,19 +4,23 @@ import logo from "public/logo.svg";
 import logoMobile from "public/logoMobile.svg";
 import closeIcon from "public/X.svg";
 import hamburgerIcon from "public/Hamburger.svg";
-
 import Link from "next/link";
+import { signIn, signOut, useSession } from "next-auth/react";
+
 const Navbar = () => {
   const [navToggle, setNavToggle] = useState(false);
-
+  const { data: session } = useSession();
   return (
     <div className="border-b-[1px]">
       <div className="md:container px-5 lg:px-0 md:py-[26px] py-4">
         <div className="flex justify-between items-center">
           <div>
-            <Link href='/'><Image alt="logo" className="hidden sm:block" src={logo} /></Link>
-            <Link href='/'><Image alt="logo" className="sm:hidden" src={logoMobile} /></Link>
-            
+            <Link href="/">
+              <Image alt="logo" className="hidden sm:block" src={logo} />
+            </Link>
+            <Link href="/">
+              <Image alt="logo" className="sm:hidden" src={logoMobile} />
+            </Link>
           </div>
           <div>
             {!navToggle && (
@@ -50,16 +54,32 @@ const Navbar = () => {
                 <Link href="/contact">Contact</Link>
               </li>
               <li>
-                <Link href="/search" className="py-1 px-6 bg-black text-white rounded-[6px]">Search</Link>
+                <Link
+                  href="/search"
+                  className="py-1 px-6 bg-black text-white rounded-[6px]">
+                  Search
+                </Link>
+              </li>
+              <li>
+                {session ? (
+                  <div className="flex gap-6">
+                    <h1>Hi, {session?.user?.name}!</h1>
+                    <button onClick={() => signOut()}>Sign Out</button>
+                  </div>
+                ) : (
+                  <button onClick={() => signIn()}>Sign in</button>
+                )}
               </li>
             </ul>
           </div>
         </div>
         <div>
           <ul
-            className={!navToggle ? "hidden sm:hidden mt-4 flex-col gap-2 font-normal uppercase tracking-wide text-xl": "flex sm:hidden mt-4 flex-col gap-2 font-normal uppercase tracking-wide text-xl"
-            }
-          >
+            className={
+              !navToggle
+                ? "hidden sm:hidden mt-4 flex-col gap-2 font-normal uppercase tracking-wide text-xl"
+                : "flex sm:hidden mt-4 flex-col gap-2 font-normal uppercase tracking-wide text-xl"
+            }>
             <li>
               <Link href="/">Home</Link>
             </li>
